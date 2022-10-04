@@ -7,6 +7,17 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    public function showUserTable(){
+		$users = $this->getAllUsers()->original['users'];
+		return view('users.table', compact('users'));
+	}
+
+	public function showCreateUser(){
+
+		return view('users.create-user');
+	}
+
+
     public function getAllUsers(){
 		$users= User::get();
 		return response()->json(['users' => $users], 200);
@@ -19,8 +30,11 @@ class UserController extends Controller
 	public function saveUser(Request $request){
      $user = new User($request->all());
 	 $user->save();
-	 return response()->json(['newUser' => $user],201);
 
+	 if ($request->ajax()){
+		return response()->json(['newUser' => $user],201);
+	 }
+	 return back()->with('success', 'Usuario Creado');
 	}
 
 	public function updateUser(User $user, Request $request){
