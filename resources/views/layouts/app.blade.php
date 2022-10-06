@@ -65,14 +65,11 @@
 
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('index') }}">
-                                        Index
-                                    </a>
-                                    <a class="dropdown-item" href="{{ route('home') }}">
-                                        Home
+                                    <a class="dropdown-item" href="{{ route('garment') }}">
+                                        Prendas
                                     </a>
 									<a class="dropdown-item" href="{{ route('show.user.table') }}">
-                                        Users
+                                        Usuarios
                                     </a>
 
                                         <a class="dropdown-item" href="{{ route('logout') }}"

@@ -16,8 +16,8 @@ class Category extends Model
 
 
 	];
-	public function Brand()
+	public function garments()
 	{
-		return $this->belongsTo(Brand::class, 'brand_id', 'id');
+		return $this->belongsTo(Garment::class, 'brand_id', 'id');
 	}
 }

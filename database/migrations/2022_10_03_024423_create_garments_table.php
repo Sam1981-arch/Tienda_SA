@@ -17,8 +17,10 @@ return new class extends Migration
             $table->id();
 			$table->bigInteger('brand_id')->unsigned();
 			$table->bigInteger('category_id')->unsigned();
-			$table->string('title');
+			$table->string('name');
 			$table->integer('stock');
+			$table->string('Description')->nullable();
+			$table->decimal('price')->nullable()->default(0.00);
             $table->timestamps();
 			$table->softDeletes();
 
@@ -34,11 +36,7 @@ return new class extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+   
     public function down()
     {
         Schema::dropIfExists('garments');

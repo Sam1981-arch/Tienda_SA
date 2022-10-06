@@ -2,9 +2,11 @@
 
 namespace App\Models;
 
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
+
 
 class GarmentHasUser extends Model
 {
@@ -18,12 +20,12 @@ class GarmentHasUser extends Model
 
 	];
 
-	public function User()
+	public function user()
 	{
 		return $this->belongsTo(User::class, 'user_id', 'id');
 	}
 
-	public function Garment()
+	public function garment()
 	{
 		return $this->belongsTo(Garment::class, 'garment_id', 'id');
 	}

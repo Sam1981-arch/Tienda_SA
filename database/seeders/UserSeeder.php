@@ -17,9 +17,19 @@ class UserSeeder extends Seeder
     {
         DB::table('users')->insert([
 			'name'=> 'Sam Arteaga',
-			'email'=>'samarteaga@gmail.com',
+			'email'=>'samarteaga2@gmail.com',
 			'password'=> bcrypt(123456),
 			'number_id'=> '1114238176'
 		]);
+
+
+		DB::table('model_has_roles')->insert([
+			'role_id'=> 1,
+			'model_type' => 'App\\Models\\User',
+			'model_id' => 1,
+		]);
+
+	
     }
 }
+

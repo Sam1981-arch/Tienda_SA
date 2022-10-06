@@ -6,14 +6,10 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+   
     public function up()
     {
-        Schema::create('garments_has_users', function (Blueprint $table) {
+        Schema::create('garment_has_users', function (Blueprint $table) {
             $table->id();
 			$table->bigInteger('garment_id')->unsigned();
 			$table->bigInteger('user_id')->unsigned();
@@ -41,6 +37,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('brand_has_users');
+        Schema::dropIfExists('garments_has_users');
     }
 };
